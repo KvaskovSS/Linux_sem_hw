@@ -1,0 +1,66 @@
+# Создание первого файла с данными
+cat > file1.txt
+Hello, this is file 1.
+
+# Создание второго файла с данными
+cat > file2.txt
+This is file 2.
+
+# Объединение файлов
+cat file1.txt file2.txt > merged.txt
+
+# Просмотр содержимого созданного файла
+cat merged.txt
+
+# Переименование файла
+mv merged.txt newfile.txt
+
+# Создание нескольких файлов
+touch file3.txt file4.txt file5.txt
+
+# Создание директории
+mkdir mydir
+
+# Перемещение файла в директорию
+mv file3.txt mydir/
+
+# Удаление всех созданных файлов и директорий
+rm file1.txt file2.txt newfile.txt file3.txt file4.txt file5.txt -r mydir
+
+# Создание файла и наполнение его содержимым
+echo "Content of file1" > file1.txt
+
+# Копирование файла
+cp file1.txt file2.txt
+
+# Создание символической ссылки
+ln -s file1.txt file3.txt
+
+# Создание жесткой ссылки
+ln file1.txt file4.txt
+
+# Просмотр айнодов файлов
+ls -i file1.txt file2.txt file3.txt file4.txt
+
+# Удаление file1.txt
+rm file1.txt
+
+# Проверка доступности остальных файлов
+cat file2.txt  # Вывод содержимого file2.txt
+cat file3.txt  # Вывод содержимого символической ссылки file3.txt
+cat file4.txt  # Вывод содержимого жесткой ссылки file4.txt
+
+# Дать созданным файлам другие имена
+mv file2.txt renamed_file2.txt
+mv file3.txt renamed_file3.txt
+mv file4.txt renamed_file4.txt
+
+# Создание новой символической ссылки
+ln -s renamed_file2.txt newlink.txt
+
+# Создание новой директории
+mkdir newdir
+
+# Перемещение ссылок в другую директорию
+mv renamed_file3.txt renamed_file4.txt newdir/
+mv newlink.txt newdir/
